@@ -1,0 +1,33 @@
+CREATE DATABASE restaurant_db;
+================================
+CREATE TABLE customers (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+=======================================
+CREATE TABLE dishes (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    price NUMERIC(10, 2) NOT NULL
+);
+ALTER TABLE dishes ADD COLUMN image_url VARCHAR(255);
+========================================================
+CREATE TABLE orders (
+    order_id SERIAL PRIMARY KEY,
+    customer_name VARCHAR(100) NOT NULL,
+    customer_email VARCHAR(100) NOT NULL,
+    ordered_items TEXT NOT NULL,
+    total_amount NUMERIC(10, 2) NOT NULL,
+    order_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+======================================================
+-- Add email column
+ALTER TABLE customers ADD COLUMN email VARCHAR(255);
+
+-- Add phone column
+ALTER TABLE customers ADD COLUMN phone VARCHAR(20);
+
+-- Add name column
+ALTER TABLE customers ADD COLUMN name VARCHAR(100);
