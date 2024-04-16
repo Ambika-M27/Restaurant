@@ -11,8 +11,7 @@ pipeline {
         stage('Install Dependencies & Run Web Server and Database') {
             steps {
                 script {
-                    // Pull the Docker image
-                    sh 'docker pull my-php-app'
+                   
                     
                     // Run the Docker container
                     sh 'docker run -p 8443:80 my-php-app'
