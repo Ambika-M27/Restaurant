@@ -22,13 +22,5 @@ pipeline {
         // Add more stages as needed
     }
     
-    post {
-        always {
-            // Cleanup Docker container after execution
-            script {
-                sh 'docker stop my-php-container'
-                sh 'docker rm my-php-container'
-            }
-        }
-    }
+   
 }
