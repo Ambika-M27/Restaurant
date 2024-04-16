@@ -10,13 +10,12 @@ pipeline {
         
         stage('Install Dependencies & web server, database') {
     steps {
-        dir('C:\Users\Ambika M\OneDrive\Desktop\New folder\restaurant') {
-            sh 'docker build -t my-php-app .'
-            sh 'docker run -p 8443:80 my-php-app'
+        dir('C:/Users/Ambika M/OneDrive/Desktop/New folder/restaurant') {
+            powershell 'docker build -t my-php-app .'
+            powershell 'docker run -p 8443:80 my-php-app'
         }
     }
 }
-
         
                 
 
