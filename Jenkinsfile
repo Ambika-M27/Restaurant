@@ -15,7 +15,7 @@ pipeline {
                     sh 'docker pull my-php-app'
                     
                     // Run the Docker container
-                    sh 'docker run -d -p 8443:80 --name my-php-container my-php-app'
+                    sh 'docker run -p 8443:80 my-php-app'
                 }
             }
         }
