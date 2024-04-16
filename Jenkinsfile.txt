@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        
+        stage('Install Dependencies & web server, database') {
+    steps {
+        dir('/var/www/html/public') {
+            sh 'docker build -t my-php-app .'
+            sh 'docker run -p 8443:80 my-php-app'
+        }
+    }
+}
+
+        
+                
+
+        // Add more stages as needed
+    }
+}
