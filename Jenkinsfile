@@ -10,7 +10,7 @@ pipeline {
         
         stage('Install Dependencies & web server, database') {
     steps {
-        dir('/var/www/html/public') {
+        dir('C:\Users\Ambika M\OneDrive\Desktop\New folder\restaurant') {
             sh 'docker build -t my-php-app .'
             sh 'docker run -p 8443:80 my-php-app'
         }
