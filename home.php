@@ -12,6 +12,10 @@
             padding: 0;
             background-color: #f5f5f5;
             color: #333;
+            background-image: url('https://w0.peakpx.com/wallpaper/1019/191/HD-wallpaper-restaurant-and-bar-with-gorgeous-view-city-restaurant-view-bar.jpg'); /* Replace 'restaurant-background.jpg' with your actual image file */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         .container {
             max-width: 1200px;
@@ -20,14 +24,15 @@
         }
         h1 {
             text-align: center;
+            color: white; /* Ensure text is visible against the background image */
         }
-        .overview {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+        .overview,
         .special-offers {
             text-align: center;
-            margin-top: 40px;
+            margin-bottom: 40px;
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background to improve readability */
+            padding: 20px;
+            border-radius: 10px; /* Add rounded corners for the background */
         }
         .button-container {
             text-align: center;

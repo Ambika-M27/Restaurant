@@ -56,13 +56,5 @@
         <input type="hidden" name="customerEmail" value="<?php echo isset($_POST['customerEmail']) ? $_POST['customerEmail'] : ''; ?>">
         <button type="submit">Confirm Order</button>
     </form>
-    <p>Redirecting to invoice page in 10 seconds...</p>
-
-    <script>
-        // Redirect to invoice page after 10 seconds
-        setTimeout(function() {
-            window.location.href = "invoice.php";
-        }, 10000); // 10,000 milliseconds = 10 seconds
-    </script>
 </body>
 </html>
