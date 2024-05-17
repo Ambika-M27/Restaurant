@@ -1,3 +1,7 @@
+ 
+
+
+
 # Use the official PHP image with Apache as base
 FROM php:7.4-apache
 
@@ -37,7 +41,7 @@ RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 RUN sed -i 's/display_errors = Off/display_errors = On/' "$PHP_INI_DIR/php.ini"
 
 # Expose ports
-EXPOSE 80 5432
+EXPOSE 80 8443
 
 # Command to start Apache and PostgreSQL when the container starts
 CMD service postgresql start && apache2-foreground

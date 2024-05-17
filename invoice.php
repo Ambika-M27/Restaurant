@@ -2,16 +2,11 @@
 // Include the FPDF library
 require('fpdf/fpdf.php');
 
-// Function to sanitize input
-function sanitizeInput($input) {
-    return htmlspecialchars(trim($input), ENT_QUOTES, 'UTF-8');
-}
-
-// Retrieve customer details and order details from URL parameters and sanitize them
-$customerName = isset($_GET['customerName']) ? sanitizeInput($_GET['customerName']) : 'N/A';
-$customerEmail = isset($_GET['customerEmail']) ? sanitizeInput($_GET['customerEmail']) : 'N/A';
-$orderedItems = isset($_GET['orderedItems']) ? sanitizeInput($_GET['orderedItems']) : 'N/A';
-$totalAmount = isset($_GET['totalAmount']) ? sanitizeInput($_GET['totalAmount']) : 'N/A';
+// Retrieve customer details and order details from URL parameters
+$customerName = isset($_GET['customerName']) ? urldecode($_GET['customerName']) : 'N/A';
+$customerEmail = isset($_GET['customerEmail']) ? urldecode($_GET['customerEmail']) : 'N/A';
+$orderedItems = isset($_GET['orderedItems']) ? urldecode($_GET['orderedItems']) : 'N/A';
+$totalAmount = isset($_GET['totalAmount']) ? $_GET['totalAmount'] : 'N/A';
 $currentDateTime = date('Y-m-d H:i:s');
 
 // Create a new PDF instance
